@@ -1,0 +1,335 @@
+/* ==========================================================================
+   DESIGN TOKENS
+   Palette: warm maroon (primary), muted gold (accent), deep teal
+   (secondary), cream background, soft blush for section variation.
+   These layer on top of Bootstrap + Tailwind utilities to give the site
+   its own identity instead of looking like default Bootstrap.
+   ========================================================================== */
+:root {
+  --maroon-900: #4a1230;
+  --maroon-700: #7a2145;
+  --maroon-500: #9c3a5e;
+  --gold-600: #b8842f;
+  --gold-400: #d6a758;
+  --teal-700: #1e5f59;
+  --teal-500: #2c8177;
+  --cream-100: #fbf5ec;
+  --cream-200: #f4ead9;
+  --blush-100: #f4dee1;
+  --charcoal-900: #241a1d;
+  --charcoal-600: #55474a;
+  --white: #ffffff;
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --shadow-card: 0 18px 40px -22px rgba(74, 18, 48, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal-900);
+  background: var(--cream-100);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--maroon-900);
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold-600);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.section { padding: 88px 0; }
+.section--tight { padding: 56px 0; }
+.bg-cream { background: var(--cream-100); }
+.bg-blush { background: var(--blush-100); }
+.bg-maroon { background: var(--maroon-900); color: var(--cream-100); }
+.bg-maroon h1, .bg-maroon h2, .bg-maroon h3 { color: var(--cream-100); }
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--gold-600);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.section-head h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 500;
+}
+
+/* ------------------------------------------------------------- BUTTONS - */
+.btn-brand-primary {
+  background: var(--gold-600);
+  color: var(--maroon-900);
+  border: 1px solid var(--gold-600);
+  border-radius: 999px;
+  padding: 13px 30px;
+  font-weight: 600;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn-brand-primary:hover {
+  background: var(--gold-400);
+  border-color: var(--gold-400);
+  color: var(--maroon-900);
+  transform: translateY(-2px);
+}
+
+.btn-brand-outline {
+  background: transparent;
+  border: 1px solid var(--maroon-700);
+  color: var(--maroon-700);
+  border-radius: 999px;
+  padding: 13px 30px;
+  font-weight: 600;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn-brand-outline:hover {
+  background: var(--blush-100);
+  color: var(--maroon-700);
+  transform: translateY(-2px);
+}
+
+.btn-brand-outline-light {
+  background: transparent;
+  border: 1px solid var(--cream-100);
+  color: var(--cream-100);
+  border-radius: 999px;
+  padding: 13px 30px;
+  font-weight: 600;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn-brand-outline-light:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--cream-100);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------- HEADER  */
+.topbar {
+  background: var(--maroon-900);
+  color: var(--cream-200);
+  font-size: 0.82rem;
+}
+.topbar a:hover { color: var(--gold-400); }
+
+.navbar-brand-custom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.navbar-brand-custom .brand-text strong {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--maroon-900);
+  display: block;
+  line-height: 1.2;
+}
+.navbar-brand-custom .brand-text em {
+  font-style: normal;
+  font-size: 0.78rem;
+  color: var(--gold-600);
+}
+
+.site-navbar { border-bottom: 1px solid var(--blush-100); background: var(--cream-100) !important; }
+.site-navbar .nav-link {
+  font-weight: 500;
+  color: var(--charcoal-900) !important;
+  padding: 10px 14px !important;
+}
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link.active { color: var(--maroon-700) !important; }
+.site-navbar .dropdown-menu {
+  border: none;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+}
+.site-navbar .dropdown-item:hover { background: var(--blush-100); color: var(--maroon-700); }
+.navbar-toggler { border-color: var(--blush-100) !important; }
+.navbar-toggler:focus { box-shadow: none; }
+
+/* Fix Bootstrap and Tailwind conflict where Tailwind sets .collapse to visibility: collapse */
+.collapse.navbar-collapse {
+  visibility: visible;
+}
+
+/* ----------------------------------------------------------------- HERO  */
+.hero { background: linear-gradient(180deg, var(--cream-200) 0%, var(--cream-100) 100%); }
+.hero h1 { font-size: clamp(2.2rem, 4.4vw, 3.3rem); font-weight: 500; line-height: 1.15; }
+.hero-art {
+  aspect-ratio: 4/5;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(155deg, var(--blush-100) 0%, var(--gold-400) 130%);
+  position: relative;
+  overflow: hidden;
+}
+.hero-art::after {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 28% 24%, rgba(255,255,255,.55), transparent 42%),
+    radial-gradient(circle at 74% 70%, var(--maroon-700) 0%, transparent 55%);
+  opacity: .85;
+}
+
+/* -------------------------------------------------------------- STATS -- */
+.stats-strip { background: var(--maroon-700); }
+.stat-value { font-family: var(--font-display); font-size: clamp(2rem,4vw,2.7rem); color: var(--cream-100); font-weight: 500; }
+.stat-label { color: var(--gold-400); font-size: .92rem; }
+.stat-col { border-right: 1px solid rgba(251,245,236,.2); }
+.stat-col:last-child { border-right: none; }
+@media (max-width: 767px) {
+  .stat-col { border-right: none; border-bottom: 1px solid rgba(251,245,236,.2); padding-bottom: 20px; margin-bottom: 20px; }
+  .stat-col:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+}
+
+/* ---------------------------------------------------------------- ABOUT  */
+.about-shape { position: absolute; border-radius: var(--radius-lg); }
+.about-shape-wrap { position: relative; aspect-ratio: 1/1; }
+.shape-1 { inset: 0 18% 18% 0; background: var(--blush-100); }
+.shape-2 { inset: 18% 0 0 18%; background: var(--teal-700); opacity: .9; }
+.checklist li {
+  position: relative; padding-left: 26px; font-weight: 500; color: var(--maroon-900); margin-bottom: 10px;
+}
+.checklist li::before {
+  content: ""; position: absolute; left: 0; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--gold-600);
+}
+
+/* -------------------------------------------------------------- CARDS -- */
+.program-card, .news-card, .contact-info-card {
+  background: var(--white); border-radius: var(--radius-md); box-shadow: var(--shadow-card); height: 100%;
+}
+.program-card { padding: 32px 28px; }
+.program-card .tag {
+  display: inline-block; font-size: .78rem; font-weight: 600; color: var(--teal-700);
+  background: rgba(44,129,119,.12); padding: 5px 12px; border-radius: 999px; margin-bottom: 16px;
+}
+.program-card h3, .news-card h3 { font-size: 1.2rem; font-weight: 500; margin-bottom: 10px; }
+.program-card p, .news-card p { color: var(--charcoal-600); }
+
+.news-thumb { aspect-ratio: 16/10; background: linear-gradient(155deg, var(--blush-100), var(--gold-400)); border-radius: var(--radius-md) var(--radius-md) 0 0; }
+.news-card .body { padding: 22px 24px 26px; }
+.news-meta { font-size: .78rem; color: var(--gold-600); font-weight: 600; margin-bottom: 10px; }
+.news-link { font-weight: 600; color: var(--maroon-700); font-size: .88rem; }
+
+/* ------------------------------------------------------------- GALLERY - */
+.gallery-tile {
+  aspect-ratio: 4/3; border-radius: var(--radius-md); position: relative; overflow: hidden;
+  display: flex; align-items: flex-end; padding: 16px; color: var(--cream-100); font-size: .85rem; font-weight: 500;
+}
+.gallery-tile::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,.45) 100%); }
+.gallery-tile span { position: relative; z-index: 1; }
+.tone-rose { background: linear-gradient(155deg, var(--maroon-500), var(--maroon-900)); }
+.tone-teal { background: linear-gradient(155deg, var(--teal-500), var(--teal-700)); }
+.tone-gold { background: linear-gradient(155deg, var(--gold-400), var(--gold-600)); }
+.tone-maroon { background: linear-gradient(155deg, var(--maroon-700), var(--charcoal-900)); }
+
+.gallery-filters .btn {
+  border-radius: 999px; font-size: .85rem; font-weight: 500; padding: 9px 18px;
+  border: 1px solid var(--blush-100); background: var(--white); color: var(--charcoal-600);
+}
+.gallery-filters .btn.active,
+.gallery-filters .btn:hover { background: var(--maroon-700); border-color: var(--maroon-700); color: var(--cream-100); }
+
+/* ------------------------------------------------------------- MISSION - */
+.mission-mark { width: 46px; height: 46px; border-radius: 50%; background: var(--gold-600); margin-bottom: 16px; }
+.bg-maroon .mission-point p { color: rgba(251,245,236,.75); }
+.video-spotlight {
+  aspect-ratio: 21/9; border-radius: var(--radius-lg); border: 1.5px dashed rgba(251,245,236,.35);
+  display: flex; align-items: center; justify-content: center; color: rgba(251,245,236,.6); font-size: .95rem;
+}
+
+/* -------------------------------------------------------- TESTIMONIALS - */
+.testimonial-quote {
+  font-family: var(--font-display); font-style: italic; font-size: clamp(1.1rem,2.2vw,1.4rem);
+  color: var(--maroon-900); max-width: 700px; margin: 0 auto 20px;
+}
+.testimonial-name { font-weight: 600; color: var(--maroon-700); }
+.testimonial-name span { font-weight: 400; color: var(--charcoal-600); }
+#testimonialCarousel .carousel-indicators [data-bs-target] { background: var(--maroon-700); }
+#testimonialCarousel .carousel-control-prev-icon,
+#testimonialCarousel .carousel-control-next-icon { filter: invert(16%) sepia(46%) saturate(1500%) hue-rotate(300deg); }
+
+/* ------------------------------------------------------------ DONATE --- */
+.donate-banner { background: var(--blush-100); }
+.donate-banner h2 { font-size: clamp(1.4rem,2.6vw,1.9rem); font-weight: 500; }
+
+.tier-card {
+  background: var(--white); border: 1.5px solid var(--blush-100); border-radius: var(--radius-md);
+  padding: 20px 22px; cursor: pointer; width: 100%; text-align: left; transition: border-color .15s ease, transform .15s ease;
+}
+.tier-card:hover { transform: translateY(-2px); }
+.tier-card.active { border-color: var(--gold-600); background: var(--blush-100); }
+.tier-amount { font-family: var(--font-display); font-size: 1.4rem; color: var(--maroon-900); display: block; margin-bottom: 6px; }
+.tier-impact { font-size: .85rem; color: var(--charcoal-600); display: block; }
+
+.donate-aside { background: var(--maroon-900); color: var(--cream-100); border-radius: var(--radius-lg); padding: 32px; }
+.donate-aside h3 { color: var(--cream-100); font-size: 1.15rem; font-weight: 500; }
+.donate-aside h4 { color: var(--gold-400); font-size: .9rem; font-weight: 600; margin-bottom: 8px; }
+.donate-aside p { color: rgba(251,245,236,.8); font-size: .92rem; }
+
+.upi-placeholder {
+  width: 140px; height: 140px; border: 1.5px dashed var(--charcoal-600); border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px;
+  font-size: .78rem; color: var(--charcoal-600);
+}
+.upi-placeholder--light { border-color: rgba(251,245,236,.4); color: rgba(251,245,236,.7); }
+
+/* --------------------------------------------------------------- FORM -- */
+.form-control-brand {
+  border-radius: var(--radius-sm); border: 1px solid var(--blush-100); padding: 13px 16px; font-family: inherit;
+}
+.form-control-brand:focus { border-color: var(--gold-600); box-shadow: none; }
+.form-label-brand { font-weight: 500; color: var(--maroon-900); font-size: .92rem; }
+.map-placeholder {
+  aspect-ratio: 21/7; border-radius: var(--radius-lg); border: 1.5px dashed var(--blush-100); background: var(--cream-200);
+  display: flex; align-items: center; justify-content: center; color: var(--charcoal-600); font-size: .9rem;
+}
+
+/* --------------------------------------------------------------- FOOTER  */
+.site-footer { background: var(--maroon-900); color: rgba(251,245,236,.8); padding-top: 72px; }
+.site-footer h4 { color: var(--cream-100); font-size: 1.05rem; font-weight: 500; margin-bottom: 18px; }
+.site-footer a:hover { color: var(--gold-400); }
+.site-footer .footer-label { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold-400); margin: 14px 0 4px; display: block; }
+.footer-bottom { border-top: 1px solid rgba(251,245,236,.14); font-size: .82rem; color: rgba(251,245,236,.6); }
+.footer-bottom a:hover { color: var(--gold-400); }
+
+/* ---------------------------------------------------------------- MISC - */
+.report-row { background: var(--white); border-radius: var(--radius-md); padding: 24px 28px; box-shadow: var(--shadow-card); }
+.legal-body { max-width: 74ch; color: var(--charcoal-600); }
+.legal-body p { margin-bottom: 16px; }
+.form-success { background: var(--blush-100); color: var(--maroon-900); padding: 18px 20px; border-radius: var(--radius-sm); font-weight: 500; }
+
+[data-animate-count] { font-variant-numeric: tabular-nums; }
