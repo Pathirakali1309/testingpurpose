@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initGalleryFilters();
   initDonateTiers();
   initContactForm();
-  initAnimations();
 });
 
 /* --------------------------------------------------------- STAT COUNTERS */
@@ -133,29 +132,24 @@ function initContactForm() {
   });
 }
 
-/* ---------------------------------------------------------- ANIMATIONS - */
-function initAnimations() {
-  if (typeof AOS === 'undefined') return;
+/* ---------------------------------------------------------- NAVBAR SHADOW */
+(function initNavbarScroll() {
+  const nav = document.querySelector(".site-navbar");
+  if (!nav) return;
 
-  // Add data-aos attributes dynamically to give elements entrance animations
-  const fadeUpElements = document.querySelectorAll('.section-head, .program-card, .news-card, .gallery-tile, .mission-point, .tier-card, .donate-aside, .report-row');
-  fadeUpElements.forEach((el, index) => {
-    el.setAttribute('data-aos', 'fade-up');
-    // Optional stagger for lists or grids if needed, but AOS handles generic fade-up well
-  });
+  function update() {
+    nav.classList.toggle("is-scrolled", window.scrollY > 12);
+  }
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+})();
 
-  const fadeInElements = document.querySelectorAll('.hero h1, .hero p, .hero .btn, .about-shape-wrap, .stat-col');
-  fadeInElements.forEach((el, index) => {
-    el.setAttribute('data-aos', 'fade-in');
-    el.setAttribute('data-aos-duration', '1000');
-    el.setAttribute('data-aos-delay', (index % 4) * 150);
-  });
-
-  // Initialize AOS
+/* --------------------------------------------------------------- AOS INIT */
+if (window.AOS) {
   AOS.init({
-    duration: 800,
+    duration: 700,
     once: true,
-    offset: 50,
-    easing: 'ease-out-cubic'
+    offset: 60,
+    easing: "ease-out-cubic",
   });
 }

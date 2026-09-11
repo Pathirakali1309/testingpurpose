@@ -180,11 +180,6 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-toggler { border-color: var(--blush-100) !important; }
 .navbar-toggler:focus { box-shadow: none; }
 
-/* Fix Bootstrap and Tailwind conflict where Tailwind sets .collapse to visibility: collapse */
-.collapse.navbar-collapse {
-  visibility: visible;
-}
-
 /* ----------------------------------------------------------------- HERO  */
 .hero { background: linear-gradient(180deg, var(--cream-200) 0%, var(--cream-100) 100%); }
 .hero h1 { font-size: clamp(2.2rem, 4.4vw, 3.3rem); font-weight: 500; line-height: 1.15; }
@@ -333,3 +328,219 @@ h1, h2, h3, h4, h5, h6 {
 .form-success { background: var(--blush-100); color: var(--maroon-900); padding: 18px 20px; border-radius: var(--radius-sm); font-weight: 500; }
 
 [data-animate-count] { font-variant-numeric: tabular-nums; }
+
+/* ------------------------------------------------------- PLACEHOLDER IMAGES
+   These are generic stock photos (Picsum/Unsplash-sourced placeholders),
+   not real photos of this organisation. Swap the <img src> in each HTML
+   file for your own photography — the layout below will keep working
+   exactly the same since it just fills the existing shapes.
+   ========================================================================== */
+.img-fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-art,
+.about-shape,
+.gallery-tile,
+.news-thumb,
+.video-spotlight,
+.founder-portrait {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-spotlight .img-fill {
+  filter: brightness(0.55);
+}
+
+.video-spotlight .play-badge {
+  position: relative;
+  z-index: 1;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: var(--gold-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--maroon-900);
+  font-size: 1.6rem;
+}
+
+.founder-portrait {
+  aspect-ratio: 4/5;
+  border-radius: var(--radius-lg);
+  background: var(--blush-100);
+}
+
+/* ============================================================================
+   ANIMATIONS
+   Scroll-reveal is handled by AOS (loaded via CDN, data-aos attributes in
+   the HTML). Everything below is hover/interaction motion and small
+   decorative loops. All of it is already neutralised by the
+   prefers-reduced-motion rule near the top of this file.
+   ========================================================================== */
+
+/* --------------------------------------------------------------- NAVBAR - */
+.site-navbar {
+  transition: box-shadow 0.25s ease, padding 0.25s ease;
+}
+
+.site-navbar.is-scrolled {
+  box-shadow: 0 12px 30px -20px rgba(74, 18, 48, 0.45);
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.navbar-brand-custom svg {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand-custom:hover svg {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.site-navbar .nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.site-navbar .nav-link:not(.dropdown-toggle)::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 4px;
+  height: 2px;
+  background: var(--gold-600);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.site-navbar .nav-link:not(.dropdown-toggle):hover::after,
+.site-navbar .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* ------------------------------------------------------------- BUTTONS - */
+.btn-brand-primary,
+.btn-brand-outline,
+.btn-brand-outline-light {
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.btn-brand-primary:hover {
+  box-shadow: 0 14px 26px -12px rgba(184, 132, 47, 0.55);
+}
+
+.donate-btn-pulse {
+  animation: pulse-ring 2.6s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(184, 132, 47, 0.45); }
+  70% { box-shadow: 0 0 0 12px rgba(184, 132, 47, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(184, 132, 47, 0); }
+}
+
+/* ----------------------------------------------------------- HERO ART -- */
+.hero-art {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* -------------------------------------------------------------- CARDS -- */
+.program-card,
+.news-card,
+.contact-info-card,
+.report-row,
+.tier-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.program-card:hover,
+.news-card:hover,
+.report-row:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 48px -22px rgba(74, 18, 48, 0.4);
+}
+
+.program-card .tag {
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.program-card:hover .tag {
+  background: var(--teal-700);
+  color: var(--cream-100);
+}
+
+/* ------------------------------------------------------------ IMAGES --- */
+.gallery-tile img.img-fill,
+.news-thumb img.img-fill {
+  transition: transform 0.5s ease;
+}
+
+.gallery-tile:hover img.img-fill,
+.news-card:hover .news-thumb img.img-fill {
+  transform: scale(1.08);
+}
+
+.about-shape img.img-fill {
+  transition: transform 0.5s ease;
+}
+
+.about-shape-wrap:hover .shape-1 img.img-fill {
+  transform: scale(1.05);
+}
+.about-shape-wrap:hover .shape-2 img.img-fill {
+  transform: scale(1.05);
+}
+
+/* ------------------------------------------------------------- STATS --- */
+.stat-value {
+  transition: transform 0.2s ease;
+}
+.stat-col:hover .stat-value {
+  transform: scale(1.06);
+}
+
+/* ------------------------------------------------------------ MISSION -- */
+.mission-mark {
+  transition: transform 0.3s ease;
+}
+.mission-point:hover .mission-mark {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+.video-spotlight .play-badge {
+  transition: transform 0.25s ease;
+}
+.video-spotlight:hover .play-badge {
+  transform: scale(1.12);
+}
+
+/* --------------------------------------------------------- GALLERY UI -- */
+.gallery-filters button {
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.gallery-filters button:active {
+  transform: scale(0.96);
+}
+
+.gallery-tile-col {
+  transition: opacity 0.3s ease;
+}
+
+/* --------------------------------------------------------- DONATE TIER - */
+.tier-card {
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}

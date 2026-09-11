@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   
 </head>
 <body>
@@ -76,7 +76,7 @@
           <a class="nav-link " href="contact.html">Contact Us</a>
         </li>
             <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-              <a href="donate.html" class="btn btn-brand-primary w-100">Donate now</a>
+              <a href="donate.html" class="btn btn-brand-primary w-100 donate-btn-pulse">Donate now</a>
             </li>
           </ul>
         </div>
@@ -89,7 +89,7 @@
     <section class="hero py-5 py-lg-6">
       <div class="container py-4">
         <div class="row align-items-center g-5">
-          <div class="col-lg-7">
+          <div class="col-lg-7" data-aos="fade-right">
             <span class="eyebrow">Empowering women. Transforming generations.</span>
             <h1 class="mb-4">Every woman deserves the opportunity to build a better future</h1>
             <p class="mb-4" style="max-width:54ch; color:var(--charcoal-600);">For women facing poverty, abandonment, domestic violence, and financial hardship, a helping hand can change everything. We work alongside women with education, skills, livelihood opportunities, healthcare, and hope — building stronger families and stronger communities.</p>
@@ -98,8 +98,8 @@
               <a href="contact.html" class="btn btn-brand-outline">Become a volunteer</a>
             </div>
           </div>
-          <div class="col-lg-5">
-            <div class="hero-art"></div>
+          <div class="col-lg-5" data-aos="fade-left" data-aos-delay="150">
+            <div class="hero-art"><img class="img-fill" src="https://picsum.photos/seed/trust-hero/800/1000" alt="Women from the community taking part in a trust program" loading="lazy"></div>
           </div>
         </div>
       </div>
@@ -109,15 +109,15 @@
     <section class="stats-strip py-5">
       <div class="container">
         <div class="row text-center">
-          <div class="col-md-4 stat-col mb-4 mb-md-0">
+          <div class="col-md-4 stat-col mb-4 mb-md-0" data-aos="zoom-in" data-aos-delay="0">
             <p class="stat-value" data-animate-count="25" data-suffix="K+">0K+</p>
             <p class="stat-label">Women empowered</p>
           </div>
-          <div class="col-md-4 stat-col mb-4 mb-md-0">
+          <div class="col-md-4 stat-col mb-4 mb-md-0" data-aos="zoom-in" data-aos-delay="120">
             <p class="stat-value" data-animate-count="8" data-suffix="K+">0K+</p>
             <p class="stat-label">Families supported</p>
           </div>
-          <div class="col-md-4 stat-col">
+          <div class="col-md-4 stat-col" data-aos="zoom-in" data-aos-delay="240">
             <p class="stat-value" data-animate-count="90" data-suffix="%">0%</p>
             <p class="stat-label">Women successfully rehabilitated</p>
           </div>
@@ -129,13 +129,10 @@
     <section class="section bg-cream">
       <div class="container">
         <div class="row align-items-center g-5">
-          <div class="col-lg-5">
-            <div class="about-shape-wrap">
-              <div class="about-shape shape-1"></div>
-              <div class="about-shape shape-2"></div>
-            </div>
+          <div class="col-lg-5" data-aos="fade-right">
+            <div class="about-shape-wrap"><div class="about-shape shape-1"><img class="img-fill" src="https://picsum.photos/seed/trust-about-1/700/700" alt="Women participating in a skills workshop" loading="lazy"></div><div class="about-shape shape-2"><img class="img-fill" src="https://picsum.photos/seed/trust-about-2/700/700" alt="A community outreach session in progress" loading="lazy"></div></div>
           </div>
-          <div class="col-lg-7">
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="150">
             <span class="eyebrow">About us</span>
             <h2 class="mb-4" style="font-size:clamp(1.8rem,3vw,2.4rem); font-weight:500;">Two decades of standing beside women who needed a hand up</h2>
             <p class="mb-3" style="color:var(--charcoal-600); max-width:58ch;">We are a Chennai-based charitable trust working with women facing poverty, abandonment, domestic violence, and financial hardship. For more than twenty years we have helped women rebuild through education, vocational training, healthcare, counselling, and livelihood support.</p>
@@ -160,21 +157,21 @@
           <h2>You can help many women by donating a little</h2>
         </div>
         <div class="row g-4">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
             <div class="program-card">
               <span class="tag">Education</span>
               <h3>Education support</h3>
               <p>Scholarships, school essentials, tuition support, and higher-education opportunities for girls from families facing financial hardship.</p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
             <div class="program-card">
               <span class="tag">Healthcare</span>
               <h3>Healthcare & wellness</h3>
               <p>Free medical camps, maternal healthcare, hygiene awareness, nutrition programs, and mental health counselling for women.</p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
             <div class="program-card">
               <span class="tag">Livelihood</span>
               <h3>Skill development</h3>
@@ -193,12 +190,12 @@
           <h2>Programs and people, captured</h2>
         </div>
         <div class="row g-3 mb-5">
-          <div class="col-6 col-md-4"><div class="gallery-tile tone-rose"><span>Scholarship handover</span></div></div>
-          <div class="col-6 col-md-4"><div class="gallery-tile tone-teal"><span>Free medical camp</span></div></div>
-          <div class="col-6 col-md-4"><div class="gallery-tile tone-gold"><span>Tailoring workshop</span></div></div>
-          <div class="col-6 col-md-4"><div class="gallery-tile tone-maroon"><span>Anniversary celebration</span></div></div>
-          <div class="col-6 col-md-4"><div class="gallery-tile tone-teal"><span>School supplies drive</span></div></div>
-          <div class="col-6 col-md-4"><div class="gallery-tile tone-rose"><span>Nutrition awareness</span></div></div>
+          <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="0"><div class="gallery-tile tone-rose"><img class="img-fill" src="https://picsum.photos/seed/trust-gallery-scholarship-handover/500/380" alt="Scholarship handover" loading="lazy"><span>Scholarship handover</span></div></div>
+          <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="70"><div class="gallery-tile tone-teal"><img class="img-fill" src="https://picsum.photos/seed/trust-gallery-free-medical-camp/500/380" alt="Free medical camp" loading="lazy"><span>Free medical camp</span></div></div>
+          <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="140"><div class="gallery-tile tone-gold"><img class="img-fill" src="https://picsum.photos/seed/trust-gallery-tailoring-workshop/500/380" alt="Tailoring workshop" loading="lazy"><span>Tailoring workshop</span></div></div>
+          <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="210"><div class="gallery-tile tone-maroon"><img class="img-fill" src="https://picsum.photos/seed/trust-gallery-anniversary-celebration/500/380" alt="Anniversary celebration" loading="lazy"><span>Anniversary celebration</span></div></div>
+          <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="280"><div class="gallery-tile tone-teal"><img class="img-fill" src="https://picsum.photos/seed/trust-gallery-school-supplies-drive/500/380" alt="School supplies drive" loading="lazy"><span>School supplies drive</span></div></div>
+          <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="350"><div class="gallery-tile tone-rose"><img class="img-fill" src="https://picsum.photos/seed/trust-gallery-nutrition-awareness/500/380" alt="Nutrition awareness" loading="lazy"><span>Nutrition awareness</span></div></div>
         </div>
         <div class="text-center">
           <a href="gallery.html" class="btn btn-brand-outline">View full gallery</a>
@@ -215,25 +212,23 @@
           <p class="mt-3" style="color:rgba(251,245,236,.8);">We believe lasting change begins by empowering women with opportunities rather than temporary assistance. Every program focuses on creating confident women who can earn independently, educate their children, and contribute positively to society.</p>
         </div>
         <div class="row g-4 mb-5">
-          <div class="col-md-4 mission-point">
+          <div class="col-md-4 mission-point" data-aos="fade-up" data-aos-delay="0">
             <div class="mission-mark"></div>
             <h3>Women's empowerment</h3>
             <p>Creating self-reliant women through skills, education, and entrepreneurship.</p>
           </div>
-          <div class="col-md-4 mission-point">
+          <div class="col-md-4 mission-point" data-aos="fade-up" data-aos-delay="100">
             <div class="mission-mark"></div>
             <h3>Education</h3>
             <p>Helping every girl continue her education, regardless of her family's finances.</p>
           </div>
-          <div class="col-md-4 mission-point">
+          <div class="col-md-4 mission-point" data-aos="fade-up" data-aos-delay="200">
             <div class="mission-mark"></div>
             <h3>Community development</h3>
             <p>Supporting families through awareness programs, healthcare drives, and welfare projects.</p>
           </div>
         </div>
-        <div class="video-spotlight" role="img" aria-label="Video placeholder — replace with a real program video">
-          <span>Your program video here</span>
-        </div>
+        <div class="video-spotlight" data-aos="zoom-in" role="img" aria-label="Program video placeholder — replace with a real program video"><img class="img-fill" src="https://picsum.photos/seed/trust-video/1200/500" alt="Still from a program video" loading="lazy"><span class="play-badge" aria-hidden="true">&#9658;</span></div>
       </div>
     </section>
 
@@ -244,7 +239,7 @@
           <span class="eyebrow">Testimonials</span>
           <h2>What people say about our work</h2>
         </div>
-        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div id="testimonialCarousel" class="carousel slide" data-aos="fade-up" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <p class="testimonial-quote">"After a difficult loss, I had no income and worried about my children's schooling. Learning tailoring through this trust let me start a small business and support my family again."</p>
@@ -284,9 +279,9 @@
           <h2>News and articles</h2>
         </div>
         <div class="row g-4">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
             <div class="news-card">
-              <div class="news-thumb"></div>
+              <div class="news-thumb"><img class="img-fill" src="https://picsum.photos/seed/trust-news-1/500/320" alt="Photo from a recent program update" loading="lazy"></div>
               <div class="body">
                 <p class="news-meta">July 2026 · Events</p>
                 <h3>Two decades of service: celebrating our anniversary</h3>
@@ -295,9 +290,9 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
             <div class="news-card">
-              <div class="news-thumb"></div>
+              <div class="news-thumb"><img class="img-fill" src="https://picsum.photos/seed/trust-news-2/500/320" alt="Photo from a recent program update" loading="lazy"></div>
               <div class="body">
                 <p class="news-meta">July 2026 · Blog</p>
                 <h3>Education support for girl children</h3>
@@ -306,9 +301,9 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
             <div class="news-card">
-              <div class="news-thumb"></div>
+              <div class="news-thumb"><img class="img-fill" src="https://picsum.photos/seed/trust-news-3/500/320" alt="Photo from a recent program update" loading="lazy"></div>
               <div class="body">
                 <p class="news-meta">July 2026 · Activities</p>
                 <h3>Free health & wellness camp</h3>
@@ -394,7 +389,7 @@
   </footer>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

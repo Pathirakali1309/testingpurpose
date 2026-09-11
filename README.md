@@ -45,10 +45,14 @@ photos, and copy:
 - **Logo** — currently an inline placeholder SVG mark in the header/footer
   of every page. Replace it with `<img src="assets/logo.png" alt="...">`
   once you have a real logo file (drop it in `assets/`).
-- **Photos** — the hero, gallery tiles, news thumbnails, and video section
-  are all colour-gradient placeholders (see `css/style.css`, classes like
-  `.hero-art`, `.gallery-tile`, `.news-thumb`, `.video-spotlight`).
-  Swap them for `<img>` tags once you have real photos in `assets/`.
+- **Photos** — the hero, about section, gallery tiles, news thumbnails, and
+  video section now show real placeholder photography (generic stock
+  images from Picsum, a free photo-placeholder service) instead of plain
+  colour blocks, so you can see the full layout with images in place. They
+  are **not** photos of your organisation — swap each `<img src="...">` for
+  your own photo once you have it (put your files in `assets/` and update
+  the `src`). Search for `picsum.photos` in the HTML files to find every
+  spot that needs a real photo.
 - **UPI QR code / map** — placeholders in the footer, donate page, and
   contact page; replace with your real QR code image and a Google Maps
   embed.
@@ -76,9 +80,27 @@ ngo-html/
 
 ## Notes
 
-- Bootstrap and Tailwind are both loaded via CDN (see the `<head>` of
-  each page) — no npm install required. If you'd rather self-host them
-  for production, download the Bootstrap CSS/JS files and swap Tailwind's
-  CDN script for a compiled build.
+- Bootstrap, Tailwind, and AOS (scroll animations) are all loaded via CDN
+  (see the `<head>` of each page) — no npm install required. If you'd
+  rather self-host them for production, download the Bootstrap CSS/JS
+  files, AOS CSS/JS, and swap Tailwind's CDN script for a compiled build.
 - The contact form and donate buttons are frontend-only right now — wire
   them up to a real form endpoint / payment gateway when you're ready.
+
+## Animations
+
+- **Scroll-reveal** — hero text/art, stat counters, about sections, program
+  cards, gallery tiles, mission points, testimonials, news cards, donate
+  banners, and report rows all fade/zoom in as you scroll, powered by the
+  [AOS](https://michalsnik.github.io/aos/) library. Change or remove the
+  effect on any element by editing its `data-aos="..."` attribute (options:
+  `fade-up`, `fade-left`, `fade-right`, `zoom-in`, etc. — see AOS docs).
+- **Hover motion** — cards lift on hover, gallery/news photos zoom slightly,
+  nav links get an underline sweep, the logo mark tilts, buttons lift with
+  a soft shadow.
+- **Ambient motion** — the hero photo gently floats, the header gains a
+  shadow once you scroll past it, and the "Donate now" nav button has a
+  soft pulsing ring to draw the eye.
+- Everything above respects `prefers-reduced-motion` — visitors with that
+  OS setting enabled will see the site with animations turned off
+  automatically (see the top of `css/style.css`).
