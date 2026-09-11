@@ -1,10 +1,14 @@
-# Your Trust Name — Website
+# Girls Livelihood Fund — Website
 
 A static, multi-page website built with plain HTML/CSS, **Bootstrap 5**
 (layout, navbar, dropdown, mobile menu, carousel) and **Tailwind CSS**
 (utility classes), plus a small custom stylesheet for the color/type
 identity. No build step, no Node — just open the files or serve them
 statically.
+
+This site is themed around a **girls' microloan / livelihood fund** —
+collateral-free small loans, financial literacy training, and mentorship
+that help girls start or grow a small business.
 
 ## How to run it
 
@@ -38,7 +42,7 @@ Everything is placeholder content, ready for your real org name, logo,
 photos, and copy:
 
 - **Org name / phone / email / address** — appear in the header, footer,
-  and each page's hero. Search-and-replace `Your Trust Name`,
+  and each page's hero. Search-and-replace `Girls Livelihood Fund`,
   `hello@yourtrust.org`, `+91 00000 00000`, and the address lines across
   the HTML files (they're duplicated per page since this is plain
   static HTML — no shared includes).
